@@ -30,7 +30,7 @@ env_vars:
 
 ## Field definition
 
-- paths: List of paths where .env files should be generated
+- paths: List of paths where .env files should be generated. Paths are relative to config file.
 - env_vars: List of all environnement variables
   - name: Name of the environnement variable
   - destination: Specify which .env file should contain this environnement variable. Each indexed boolean maps to the corresponding .env file as described in "paths" array. For example: a destination of [False, True, False] with paths of [".","..","..."] will include this environnement variable in the .env of parent folder ("..")
