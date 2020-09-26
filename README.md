@@ -1,6 +1,6 @@
 # envsplitter
 
-Generates env files in folder specified by user.
+Generates env files in folders specified by user.
 
 # Motivation
 
@@ -23,7 +23,7 @@ paths:
 env_vars:
 
 - name: string
-  destination: [Boolean] <--- See definition bellow
+  destination: [Boolean]
   value: any
 
 ```
