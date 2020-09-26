@@ -1,6 +1,6 @@
 # envsplitter
 
-Generates env files in folder specified by user.
+Generates env files in folders specified by user.
 
 # Motivation
 
