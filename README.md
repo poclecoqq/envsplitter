@@ -4,7 +4,7 @@ Generates env files in folder specified by user.
 
 # Motivation
 
-Docker container need to share some environnement variables (exp: ports). Instead of managing multiple .env file in each container, have one config file that will generate the config files with shared variables. By having one source of truth for your env variables, you don't have to bother the consistency between each .env file.
+Docker containers in a docker-compose setup need to share some environnement variables (exp: ports). These environnement variable may need to reside in a env_file, not be in the environnement. Some program may read configuration variable from a file. Instead of managing multiple .env file in each container, have one config file that will generate the .env for each container. By having one source of truth for your env variables, you don't have to bother the consistency between each .env file.
 
 # How to use
 
@@ -15,7 +15,7 @@ Docker container need to share some environnement variables (exp: ports). Instea
 
 ## Schema definition
 
-"""
+```
 paths:
 
 - string
@@ -26,7 +26,7 @@ env_vars:
   destination: [Boolean] <--- See definition bellow
   value: any
 
-"""
+```
 
 ## Field definition
 
