@@ -23,7 +23,7 @@ paths:
 env_vars:
 
 - name: string
-  destination: [Boolean] <--- See definition bellow
+  destination: [Boolean]
   value: any
 
 ```
