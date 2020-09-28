@@ -8,9 +8,19 @@ Docker containers in a docker-compose setup need to share some environement vari
 
 # How to use
 
+## General steps
 1. Write a config file following schema [definition](# Schema definition)
 2. Generate .env files
 
+## Call from the CLI
+```
+python3 main.py [PATH TO CONFIG FILE]
+```
+## Call from python project
+```
+import generate_env_files from envsplitter.main
+generate_env_files(PATH_TO_CONFIG_FILE)
+```
 # Schema
 
 ## Schema definition
