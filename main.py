@@ -8,10 +8,9 @@ from schema import schema
 
 
 def _parse_cli_args():
-    config_path = sys.argv[1]
-    if not config_path:
+    if len(sys.argv) < 2:
         exit('Please provide a path to a config file.')
-    return config_path
+    return sys.argv[1]
 
 
 def _load_yml_file(yml_path):
