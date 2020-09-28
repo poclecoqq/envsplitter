@@ -4,7 +4,7 @@ Generates env files in directories specified by user.
 
 # Motivation
 
-Docker containers in a docker-compose setup need to share some environement variables (exp: ports). These environement variable may need to reside in a env_file, not be in the environement. Some program may read configuration variable from a file. Instead of managing multiple .env file in each container, have one config file that will generate the .env for each container. By having one source of truth for your env variables, you don't have to bother the consistency between each .env file.
+Docker containers in a docker-compose setup need to share some environment variables (exp: ports). These environment variable may need to reside in a env_file, not be in the environment. Some program may read configuration variable from a file. Instead of managing multiple .env file in each container, have one config file that will generate the .env for each container. By having one source of truth for your env variables, you don't have to bother the consistency between each .env file.
 
 # How to use
 
@@ -41,7 +41,7 @@ env_vars:
 ## Field definition
 
 - paths: List of paths where .env files should be generated. Paths are relative to config file.
-- env_vars: List of all environement variables
-  - name: Name of the environement variable
-  - destination: Specify which .env file should contain this environement variable. Each indexed boolean maps to the corresponding .env file as described in "paths" array. For example: a destination of [False, True, False] with paths of [".","..","..."] will include this environement variable in the .env of parent directory ("..")
-  - value: value of the environement variable
+- env_vars: List of all environment variables
+  - name: Name of the environment variable
+  - destination: Specify which .env file should contain this environment variable. Each indexed boolean maps to the corresponding .env file as described in "paths" array. For example: a destination of [False, True, False] with paths of [".","..","..."] will include this environment variable in the .env of parent directory ("..")
+  - value: value of the environment variable
