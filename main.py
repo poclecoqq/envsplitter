@@ -1,21 +1,17 @@
 import yaml
-import argparse
 from io import StringIO
 from cerberus import Validator
 import os
+import sys
 
 from schema import schema
 
 
 def _parse_cli_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-c", "--config", help="Path to config file")
-
-    args = parser.parse_args()
-    configs_path = args.config
-    if not configs_path:
-        exit('Please provde a path to config file with -c. Exiting.')
-    return configs_path
+    config_path = sys.argv[1]
+    if not config_path:
+        exit('Please provide a path to a config file.')
+    return config_path
 
 
 def _load_yml_file(yml_path):
