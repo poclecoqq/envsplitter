@@ -1,6 +1,7 @@
 import os
 import sys
 import yaml
+import argparse
 
 
 def _maps_to_file(path):
@@ -8,15 +9,16 @@ def _maps_to_file(path):
 
 
 def parse_cli_args():
-    if len(sys.argv) < 2:
-        exit('Please provide a path to a config file.')
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-o", help="Name of the output file ", type=str)
+    parser.add_argument("inputFile", help="Path to the input file", type=str)
 
-    configs_path = sys.argv[1]
-    if not _maps_to_file(configs_path):
-        print("Provided path: " + os.path.abspath(configs_path))
+    args = parser.parse_args()
+    if not _maps_to_file(args.inputFile):
+        print("Provided path: " + os.path.abspath(args.inputFile))
         exit('No file found. Should map to a config file. Exiting.')
 
-    return configs_path
+    return args.inputFile, args.o
 
 
 def load_yml_file(yml_path):
