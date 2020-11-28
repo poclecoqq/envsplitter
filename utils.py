@@ -17,8 +17,10 @@ def parse_cli_args():
     if not _maps_to_file(args.inputFile):
         print("Provided path: " + os.path.abspath(args.inputFile))
         exit('No file found. Should map to a config file. Exiting.')
+    output_file_name = '' if args.o is None else str(
+        args.o)
 
-    return args.inputFile, args.o
+    return args.inputFile, output_file_name
 
 
 def load_yml_file(yml_path):
